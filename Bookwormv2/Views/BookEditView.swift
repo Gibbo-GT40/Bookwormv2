@@ -53,7 +53,6 @@ struct BookEditView: View {
    }
 }
 
-
 struct BookEditView_Previews: PreviewProvider {
    static var previews: some View {
       NavigationView {
