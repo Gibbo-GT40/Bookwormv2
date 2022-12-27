@@ -10,10 +10,11 @@ import SwiftUI
 
 struct Helper {
    
-   static var genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+   //static var genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
    
 }
 
+// helper function for updating textfiled where the original data is from CoreData
 func ??<T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
    Binding(
       get: { lhs.wrappedValue ?? rhs },

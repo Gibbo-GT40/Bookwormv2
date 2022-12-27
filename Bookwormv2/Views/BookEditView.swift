@@ -10,7 +10,6 @@ import SwiftUI
 struct BookEditView: View {
    @Environment(\.managedObjectContext) private var viewContext
    
-   // Whether this view should be showing or not
    @Binding var dismissView: Bool
    
    // The book to edit
@@ -20,28 +19,38 @@ struct BookEditView: View {
       NavigationView {
          Form {
             Section {
-               TextField("", text: $book.title ?? "no title")
-               TextField("", text: $book.author ?? "no author")
+               TextField("", text: $book.title)
+               TextField("", text: $book.author)
                Picker("Genre", selection: $book.genre) {
-                  ForEach(Helper.genres, id: \.self) {
-                     Text($0)
+                  ForEach(Genre.allCases, id: \.self) { value in
+                     Text(String(value.rawValue))
+                        .tag(value.rawValue)
                   }
                }
             }
             Section {
-               TextEditor(text: $book.review ?? "no Review")
-               let ratingInt: Int = Int($book.rating)
-               BookRatingView(rating: ratingInt)
+               BookRatingView(rating: $book.rating)
+               TextEditor(text: $book.review)
+            }header: {
+               Text("The Review")
+            }
+         }
+         .navigationTitle("Edit Book")
+         .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+               Button("Update") {
+                  try? viewContext.save()
+                  dismissView.toggle()
+               }
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+               Button("Cancel") {
+                  dismissView.toggle()
+               }
             }
          }
       }
    }
-   
-//   func updateBook(book: Book) {
-//      viewContext.performAndWait {
-//         try? viewContext.save()
-//      }
-//   }
 }
 
 

@@ -20,6 +20,8 @@
 		928F7A1C29546FA60049356F /* BookAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F7A1B29546FA60049356F /* BookAddView.swift */; };
 		928F7A1E295475550049356F /* BookEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F7A1D295475550049356F /* BookEditView.swift */; };
 		928F7A202955CD550049356F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F7A1F2955CD550049356F /* Helper.swift */; };
+		928F7A23295606080049356F /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F7A21295606080049356F /* Book+CoreDataClass.swift */; };
+		928F7A24295606080049356F /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F7A22295606080049356F /* Book+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		928F7A1B29546FA60049356F /* BookAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAddView.swift; sourceTree = "<group>"; };
 		928F7A1D295475550049356F /* BookEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditView.swift; sourceTree = "<group>"; };
 		928F7A1F2955CD550049356F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		928F7A21295606080049356F /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		928F7A22295606080049356F /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				928F7A07295447830049356F /* Bookwormv2.xcdatamodeld */,
+				928F7A21295606080049356F /* Book+CoreDataClass.swift */,
+				928F7A22295606080049356F /* Book+CoreDataProperties.swift */,
 				928F7A05295447830049356F /* Persistence.swift */,
 				928F7A152954627E0049356F /* Book+PreviewProvider.swift */,
 				928F7A1F2955CD550049356F /* Helper.swift */,
@@ -181,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				928F7A202955CD550049356F /* Helper.swift in Sources */,
+				928F7A24295606080049356F /* Book+CoreDataProperties.swift in Sources */,
 				928F7A06295447830049356F /* Persistence.swift in Sources */,
 				928F7A1C29546FA60049356F /* BookAddView.swift in Sources */,
 				928F79FF295447810049356F /* ContentView.swift in Sources */,
@@ -190,6 +197,7 @@
 				928F7A1329545B640049356F /* BookDetailView.swift in Sources */,
 				928F7A162954627E0049356F /* Book+PreviewProvider.swift in Sources */,
 				928F7A09295447830049356F /* Bookwormv2.xcdatamodeld in Sources */,
+				928F7A23295606080049356F /* Book+CoreDataClass.swift in Sources */,
 				928F7A1E295475550049356F /* BookEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

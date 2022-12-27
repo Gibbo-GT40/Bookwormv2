@@ -20,11 +20,11 @@ struct BookDetailView: View {
    var body: some View {
       ScrollView {
          ZStack (alignment: .bottomTrailing) {
-            Image(book.genre ?? "Fantasy")
+            Image(book.genre)
                .resizable()
                .scaledToFit()
             
-            Text(book.genre?.uppercased() ?? "FANTASY")
+            Text(book.genre.uppercased())
                .font(.caption)
                .fontWeight(.black)
                .padding(8)
@@ -33,15 +33,15 @@ struct BookDetailView: View {
                .clipShape(Capsule())
                .offset(x: -5, y: -5)
          }
-         Text(book.author ?? "Unknown author")
+         Text(book.author)
             .font(.title)
             .foregroundColor(.secondary)
-         Text(book.review ?? "No Review")
+         Text(book.review)
             .padding()
-         BookRatingView(rating: .constant(Int(book.rating)))
+         BookRatingView(rating: .constant(book.rating))
             .font(.largeTitle)
       }
-      .navigationTitle(book.title ?? "Unknown Book")
+      .navigationTitle(book.title)
       //.navigationBarTitleDisplayMode(.inline)
       .alert("Delete book?", isPresented: $showDeleteAlert) {
          Button("Delete", role: .destructive, action: deleteBook)
