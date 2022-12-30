@@ -10,7 +10,11 @@ import CoreData
 class PersistenceController: ObservableObject {
    static let shared = PersistenceController()
    
-   let container: NSPersistentContainer
+   // for local CoreData only
+   //let container: NSPersistentContainer
+   
+   // for CloudKit Coredata sync
+   let container: NSPersistentCloudKitContainer
    
    static var preview: PersistenceController = {
       let result = PersistenceController(inMemory: true)
@@ -54,7 +58,7 @@ class PersistenceController: ObservableObject {
    }()
    
    init(inMemory: Bool = false) {
-      container = NSPersistentContainer(name: "Bookwormv2")
+      container = NSPersistentCloudKitContainer(name: "Bookwormv2")
       if inMemory {
          container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
       }
