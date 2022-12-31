@@ -40,6 +40,9 @@ struct BookDetailView: View {
             .padding()
          BookRatingView(rating: .constant(book.rating))
             .font(.largeTitle)
+         Image(uiImage: (UIImage(data: book.imageData) ?? UIImage(named: "defaultWaterImage"))!)
+            .resizable()
+            .scaledToFit()
       }
       .navigationTitle(book.title)
       //.navigationBarTitleDisplayMode(.inline)
@@ -65,7 +68,7 @@ struct BookDetailView: View {
       }
       .sheet(isPresented: $showEditSheet) {
          NavigationView {
-            BookEditView(dismissView: $showEditSheet, book: book)
+            BookEditView2(dismissView: $showEditSheet, book: book)
          }
       }
    }

@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct Helper {
-   
-   //static var genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
-   
+   //let defaultWaterImageData: Data 
 }
+
+
 
 // helper function for updating textfiled where the original data is from CoreData
 func ??<T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {

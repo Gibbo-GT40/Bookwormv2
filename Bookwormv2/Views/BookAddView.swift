@@ -11,11 +11,15 @@ struct BookAddView: View {
    @Environment(\.managedObjectContext) private var viewContext
    @Environment(\.dismiss) var dismiss
    
+   @State private var showingImagePicker = false
+   @State private var inputImage: UIImage?
+   
    @State private var title = ""
    @State private var author = ""
    @State private var genre: String = Genre.mystery.rawValue
    @State private var rating: Int16 = 3
    @State private var review = ""
+   @State private var image: Image = Image("defaultWaterImage")
    
    //let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
    
@@ -23,6 +27,21 @@ struct BookAddView: View {
       NavigationView {
          Form {
             Section {
+               ZStack {
+                  Rectangle()
+                     .fill(.secondary)
+                  image
+                     .resizable()
+                     .scaledToFit()
+                  Text("Tap to select a picture")
+                     .foregroundColor(.white)
+                     .font(.headline)
+                  
+               }
+               .onTapGesture {
+                  // select an image
+                  showingImagePicker = true
+               }
                TextField("Name of book", text: $title)
                TextField("Author's name", text: $author)
                Picker("Genre", selection: $genre) {
@@ -40,9 +59,14 @@ struct BookAddView: View {
             }
          }
          .navigationTitle("Add Book")
+         .onChange(of: inputImage) { _ in loadImage() }
+         .sheet(isPresented: $showingImagePicker) {
+            ImagePicker(image: $inputImage)
+         }
          .toolbar {
             ToolbarItem {
                Button("Save") {
+                  
                   let newBook = Book(context: viewContext)
                   newBook.id = UUID()
                   newBook.title = title
@@ -50,6 +74,7 @@ struct BookAddView: View {
                   newBook.rating = rating
                   newBook.review = review
                   newBook.genre = genre
+                  newBook.imageData = (inputImage?.jpegData(compressionQuality: 0.0))!
                   
                   try? viewContext.save()
                   dismiss()
@@ -63,6 +88,12 @@ struct BookAddView: View {
          }
       }
    }
+   
+   func loadImage() {
+      guard let inputImage = inputImage else { return }
+      image = Image(uiImage: inputImage)
+   }
+   
 }
 
 

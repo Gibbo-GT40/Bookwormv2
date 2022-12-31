@@ -23,6 +23,7 @@ extension Book: Identifiable{
    @NSManaged public var rating: Int16
    @NSManaged public var review: String
    @NSManaged public var title: String
+   @NSManaged public var imageData: Data
    
 }
 

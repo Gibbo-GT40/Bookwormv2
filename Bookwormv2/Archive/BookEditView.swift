@@ -16,7 +16,9 @@ struct BookEditView: View {
    @ObservedObject var book: Book
    
    var body: some View {
+      
       NavigationView {
+         
          Form {
             Section {
                TextField("", text: $book.title)
@@ -28,11 +30,9 @@ struct BookEditView: View {
                   }
                }
             }
-            Section {
+            Section(header: Text("The Review")) {
                BookRatingView(rating: $book.rating)
                TextEditor(text: $book.review)
-            }header: {
-               Text("The Review")
             }
          }
          .navigationTitle("Edit Book")
@@ -53,12 +53,3 @@ struct BookEditView: View {
    }
 }
 
-struct BookEditView_Previews: PreviewProvider {
-   static var previews: some View {
-      NavigationView {
-         BookEditView(dismissView: .constant(false),
-                      book: Book.example)
-      }
-      .environmentObject(PersistenceController.preview)
-   }
-}

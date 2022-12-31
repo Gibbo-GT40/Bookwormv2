@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92065E9229604DE1008C76ED /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92065E9129604DE1008C76ED /* ImagePicker.swift */; };
+		9206B3C229605BFC0018AD6B /* BookEditView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206B3C129605BFC0018AD6B /* BookEditView2.swift */; };
 		928F79FD295447810049356F /* Bookwormv2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F79FC295447810049356F /* Bookwormv2App.swift */; };
 		928F79FF295447810049356F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928F79FE295447810049356F /* ContentView.swift */; };
 		928F7A01295447830049356F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928F7A00295447830049356F /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92065E9129604DE1008C76ED /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9206B3C129605BFC0018AD6B /* BookEditView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditView2.swift; sourceTree = "<group>"; };
+		9206B3C429607AC00018AD6B /* notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = notes.md; sourceTree = "<group>"; };
 		928F79F9295447810049356F /* Bookwormv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookwormv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		928F79FC295447810049356F /* Bookwormv2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookwormv2App.swift; sourceTree = "<group>"; };
 		928F79FE295447810049356F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +61,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9206B3C329606D6A0018AD6B /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				928F7A1D295475550049356F /* BookEditView.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		9206B3C7296084210018AD6B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				928F7A1F2955CD550049356F /* Helper.swift */,
+				92065E9129604DE1008C76ED /* ImagePicker.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		928F79F0295447810049356F = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +100,13 @@
 				928F7A26295C93050049356F /* Info.plist */,
 				928F7A25295C6BC70049356F /* Bookwormv2.entitlements */,
 				928F79FC295447810049356F /* Bookwormv2App.swift */,
+				9206B3C7296084210018AD6B /* Helpers */,
 				928F7A14295462520049356F /* Model */,
 				928F7A1129545AF20049356F /* Views */,
 				928F7A00295447830049356F /* Assets.xcassets */,
 				928F7A02295447830049356F /* Preview Content */,
+				9206B3C329606D6A0018AD6B /* Archive */,
+				9206B3C429607AC00018AD6B /* notes.md */,
 			);
 			path = Bookwormv2;
 			sourceTree = "<group>";
@@ -98,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				928F79FE295447810049356F /* ContentView.swift */,
-				928F7A1D295475550049356F /* BookEditView.swift */,
 				928F7A1B29546FA60049356F /* BookAddView.swift */,
+				9206B3C129605BFC0018AD6B /* BookEditView2.swift */,
 				928F7A1229545B640049356F /* BookDetailView.swift */,
 				928F7A192954684B0049356F /* BookRatingView.swift */,
 				928F7A17295466680049356F /* EmojiRatingView.swift */,
@@ -115,7 +140,6 @@
 				928F7A22295606080049356F /* Book+CoreDataProperties.swift */,
 				928F7A05295447830049356F /* Persistence.swift */,
 				928F7A152954627E0049356F /* Book+PreviewProvider.swift */,
-				928F7A1F2955CD550049356F /* Helper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +217,8 @@
 				928F7A202955CD550049356F /* Helper.swift in Sources */,
 				928F7A24295606080049356F /* Book+CoreDataProperties.swift in Sources */,
 				928F7A06295447830049356F /* Persistence.swift in Sources */,
+				92065E9229604DE1008C76ED /* ImagePicker.swift in Sources */,
+				9206B3C229605BFC0018AD6B /* BookEditView2.swift in Sources */,
 				928F7A1C29546FA60049356F /* BookAddView.swift in Sources */,
 				928F79FF295447810049356F /* ContentView.swift in Sources */,
 				928F7A18295466680049356F /* EmojiRatingView.swift in Sources */,

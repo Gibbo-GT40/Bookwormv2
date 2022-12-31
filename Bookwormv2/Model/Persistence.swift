@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 class PersistenceController: ObservableObject {
    static let shared = PersistenceController()
@@ -19,6 +20,7 @@ class PersistenceController: ObservableObject {
    static var preview: PersistenceController = {
       let result = PersistenceController(inMemory: true)
       let viewContext = result.container.viewContext
+      let inputImage: UIImage = UIImage(named: "defaultWaterImage")!
       
       // Preview content for Book
       let book1 = Book(context: viewContext)
@@ -28,6 +30,7 @@ class PersistenceController: ObservableObject {
       book1.genre = "Fantasy"
       book1.rating = 4
       book1.review = "This was a great book; I really enjoyed it."
+      book1.imageData = inputImage.jpegData(compressionQuality: 0.0)!
       
       try? viewContext.save()
       
@@ -37,6 +40,7 @@ class PersistenceController: ObservableObject {
       book2.genre = "Kids"
       book2.rating = 2
       book2.review = "Didnt like this one"
+      book2.imageData = inputImage.jpegData(compressionQuality: 0.0)!
       
       try? viewContext.save()
       
